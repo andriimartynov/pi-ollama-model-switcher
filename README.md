@@ -16,6 +16,12 @@ This extension monitors changes in the selected language model. Its primary purp
 
 ## Installation
 
+### From Npm
+
+```bash
+pi install npm:@andriimartynov/pi-ollama-model-switcher
+```
+
 ### From GitHub
 
 ```bash
