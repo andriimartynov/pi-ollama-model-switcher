@@ -21,23 +21,25 @@
   "author": "Andrii Martynov",
   "type": "module",
   "files": [
-    "index.ts",
+    "src/index.ts",
     "README.md"
   ],
   "scripts": {
-    "clean": "rimraf dist"
+    "clean": "npm run clean --workspaces",
+    "check": "biome check --write --error-on-warnings ."
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
+    "@biomejs/biome": "2.3.5",
     "rimraf": "^6.0.1",
-    "typescript": "^5.8.2"
+    "typescript": "^5.9.2"
   },
   "peerDependencies": {
     "@mariozechner/pi-coding-agent": "^0.71.1"
   },
   "pi": {
     "extensions": [
-      "./index.ts"
+      "./src/index.ts"
     ]
   }
 }
