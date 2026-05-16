@@ -1,6 +1,9 @@
 import type {ExtensionAPI} from "@mariozechner/pi-coding-agent";
+import {OllamaClient} from "./ollama-client.js";
 
 export default function (pi: ExtensionAPI) {
+  const client = new OllamaClient();
+
   pi.on("model_select", async (event, ctx) => {
     const {model, previousModel} = event;
 
@@ -17,7 +20,7 @@ export default function (pi: ExtensionAPI) {
 
     try {
       console.log(`[Ollama Switcher] Switching context: stopping model "${prev}".`);
-      await pi.exec("ollama", ["stop", prev], {signal: ctx.signal});
+      await client.stopModel(prev, ctx.signal);
       console.log(`[Ollama Switcher] Model "${prev}" stopped.`);
     } catch (err) {
       const msg = err instanceof Error ? err.message : JSON.stringify(err);
