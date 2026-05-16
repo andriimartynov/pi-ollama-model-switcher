@@ -1,6 +1,6 @@
 {
   "name": "@andriimartynov/pi-ollama-model-switcher",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Monitors and manages Ollama model instances within the pi coding agent harness.",
   "keywords": [
     "pi",
@@ -21,7 +21,7 @@
   "author": "Andrii Martynov",
   "type": "module",
   "files": [
-    "src/index.ts",
+    "src/**/*.ts",
     "README.md"
   ],
   "scripts": {
